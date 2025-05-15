@@ -18,5 +18,5 @@ print("\r", end="", flush=True)
 print("Chal rha h")
 if not (response.get("ok") and response.get("result", {}).get("status") in ["member", "administrator", "creator"]):
     print(" ㅤ⚚  𝐉ᴏɪɴ 𝐓ʜᴇ 𝐂ʜᴀɴɴᴇʟ 𝐓ᴏ 𝐔𝚂ᴇ 𝐓ʜᴇ 𝐓ᴏᴏʟ")
-    webbrowser.open("https://t.me/+cOLthiNgNpoxOWI9") 
+    webbrowser.open("https://t.me/addlist/-zdOU4i16nNjZjll") 
     sys.exit()
