@@ -1,0 +1,22 @@
+import webbrowser
+import time
+import requests
+import sys
+import os  # <-- this is important
+
+tokenbot = os.getenv("BOT_TOKEN")  # <-- now securely loaded
+
+channel = "@oblipy" 
+teleid = input(" ㅤ❒  𝐄ɴᴛᴇʀ 𝐘ᴏᴜʀ 𝐈ᴅ	")
+print(" ㅤ❒  𝐂ʜᴇᴄᴋɪɴɢ 𝐈ғ 𝐘ᴏᴜ 𝐇ᴀᴠᴇ 𝐉ᴏɪɴᴇᴅ 𝐓ʜᴇ 𝐂ʜᴀɴɴᴇʟ 𝐘ᴇᴛ??", end="", flush=True)
+time.sleep(1) 
+
+url = f"https://api.telegram.org/bot{tokenbot}/getChatMember?chat_id={channel}&user_id={teleid}"
+response = requests.get(url).json()
+
+print("\r", end="", flush=True)
+
+if not (response.get("ok") and response.get("result", {}).get("status") in ["member", "administrator", "creator"]):
+    print(" ㅤ⚚  𝐉ᴏɪɴ 𝐓ʜᴇ 𝐂ʜᴀɴɴᴇʟ 𝐓ᴏ 𝐔𝚂ᴇ 𝐓ʜᴇ 𝐓ᴏᴏʟ")
+    webbrowser.open("https://t.me/+cOLthiNgNpoxOWI9") 
+    sys.exit()
